@@ -19,11 +19,14 @@ def get_probability_given_evidences(array, sample, evidences):
         # print("evidences", len(evidences), "i",i, "position", position)
         array_tmp = array_tmp[position]
 
+    return get_probability(array_tmp, sample)
+
+def get_probability(array_tmp, sample):
     tmp = sample
     for index in range(0, len(array_tmp)):
-        # print(array_tmp)
+        print("array", array_tmp)
         tmp = tmp - array_tmp[index][0]
-        # print("tmp",tmp)
+        print("tmp",tmp)
         if tmp <= 0:
             return array_tmp[index]
 
